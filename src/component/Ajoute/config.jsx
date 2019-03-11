@@ -33,7 +33,7 @@ class confirm extends Component {
                         {this.props.users.length >= 0 ? (
                         this.props.users.map(user => (
                                 <tr key={user.id}>
-                                    <td>{user.id}</td>
+                                    <td className="cent">{user.id}</td>
                                     <td>{user.name}</td>
                                     <td>{user.username}</td>
                                     <td className="cent">
