@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import UserTable from './component/Ajoute/list'
+import UserTable from './component/Ajoute/config'
 import AddUserForm from './component/forms/AddUserForm';
 import 'react-confirm-alert/src/react-confirm-alert.css'
 import './App.css';

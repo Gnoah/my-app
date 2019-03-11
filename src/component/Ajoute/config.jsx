@@ -2,16 +2,14 @@ import { confirmAlert } from 'react-confirm-alert'; // Import
 import React, { Component } from 'react'
 import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 
-
 class confirm extends Component {
-    submit = () => {
+    submit = (a) => {
         confirmAlert({
-          title: 'Confirmer',
-          message: 'suppression',
+          message: 'Confirmer suppression',
           buttons: [
             {
               label: 'Oui',
-              onClick: () => {this.deleteUser()}
+              onClick: () => this.props.deleteUser(a)
             },
             {
               label: 'Non',
@@ -21,9 +19,36 @@ class confirm extends Component {
       };
       render(){
             return (
-                <div>
-                <button className="btn btn-danger" onClick={this.submit}>X</button>
-                </div>
+                <center>
+                    <table class="table table-bordered">
+                    <thead>
+                        <tr className="tab">
+                            <th>id</th>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.props.users.length >= 0 ? (
+                        this.props.users.map(user => (
+                                <tr key={user.id}>
+                                    <td>{user.id}</td>
+                                    <td>{user.name}</td>
+                                    <td>{user.username}</td>
+                                    <td className="cent">
+                                        <button className="btn btn-danger" onClick={()=>this.submit(user.id)}>X</button>
+                                    </td>
+                                </tr>
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan={3}></td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
+	</center>
             );
       }
 }
