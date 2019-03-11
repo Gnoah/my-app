@@ -2,9 +2,13 @@
     margin-left: 10px;
 }
 .tab{
+    text-align: center;
     background-color: rgb(192, 77, 77);
 }
 
 table{
     margin-top: 30px;
+}
+.cent{
+    text-align: center;
 }
